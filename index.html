@@ -10,10 +10,13 @@
    
 </head>
 <body>
- 
-<p class="computerChoice">Computer Choice goes here</p>
+<div>Your opponent</div>
+<p id="computerChoice">Computer Choice goes here</p>
 
-<p class="result"> Result goes here</p>
+<p id="result"> Press the buttons below to play!</p>
+
+<p id="playerChoice"></p>
+<div>Your Choice</div>
  
  <div class="playerChoices">
     <button onclick="playerChoose(rock);game()">Rock</button>
@@ -22,10 +25,13 @@
  </div> 
 
  <div class="statistics">
-Statistics go here
+    <div>STATS</div>
+    <div class = 'wins'>WINS<div id="wincount">0</div></div>
+    <div class = 'lossesl'>LOSSES<div id="losecount">0</div></div>
+    <div class="ties">TIES<div id="tiecount">0</div></div>
  </div>
  <div class="newGame">
-   <button>New Game</button>
+   <button onclick="resetScore()">New Game</button>
  </div>
 </body>
 </html>
