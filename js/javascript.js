@@ -23,7 +23,6 @@ else if (x===scissors){
 
 }
 function game (){
-    updateScore();
     computerPlay();
     if (playerChoice===computerChoice) {
         tiecount++;
@@ -69,17 +68,36 @@ function game (){
     }
     document.getElementById('computerChoice').textContent = computerChoice
     document.getElementById('playerChoice').textContent = playerChoice
-    updateScore();
-}
+    updateScore(); 
+    if (wincount === 5 || losecount === 5){
+        checkWinner();   
+        }
+    }
+
 function updateScore(){
 document.getElementById('wincount').textContent = wincount;
 document.getElementById('losecount').textContent = losecount;
 document.getElementById('tiecount').textContent = tiecount;
+
 }
 function resetScore(){
     tiecount = 0;
     wincount = 0;
     losecount = 0;
     updateScore()
-
 }
+function checkWinner(){
+    if (wincount === 5){
+    document.getElementById('result').textContent = 'Game Finished. Player WINS'
+    resetScore();
+    }
+    if (losecount === 5){
+        document.getElementById('result').textContent = 'Game Finished. Computer WINS'
+    resetScore()
+            }
+    else {
+        false;
+    }      
+    }
+
+
